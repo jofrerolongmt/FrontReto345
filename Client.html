@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+
+    <script type="text/javascript" src="js/Client.js"></script>
+    <title>Clientes</title>
+</head>
+<body>
+    <div class="ui purple inverted fixed menu">
+        <a class="item" href="index.html">
+            <i class="home icon"></i>
+            Inicio
+        </a>
+        <a class="item" href="Category.html">
+            Categorias
+        </a>
+        <a class="item" href="Game.html">
+            Juegos
+        </a>
+        <a class="item" href="Client.html">
+            Clientes
+        </a>
+        <a class="item" href="Message.html">
+            Mensajes
+        </a>
+        <a class="item" href="Reservation.html">
+            Reservaciones
+        </a>
+        <a class="item" href="Reports.html">
+            Reportes
+        </a>
+    </div>
+    <br>
+    <div class="ui divider"></div>
+    <div class="ui two column left aligned divided very relaxed stackable grid container">
+        <div class="row">
+            <div class="column">
+                <h2>Registro de Clientes</h2>
+                <div class="ui form">
+                    <div class="field">
+                        <div class="ui search">
+                            <label for="email"></label>
+                            <input type="text" id="Clemail" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="password"></label>
+                        <input type="password" id="Clpassword" placeholder="Contraseña">
+                    </div>
+                    <div class="field">
+                        <div class="ui search">
+                            <label for="name"></label>
+                            <input type="text" id="Clname" placeholder="Nombre">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui search">
+                            <label for="age"></label>
+                            <input type="number" id="Clage" placeholder="Edad">
+                        </div>
+                    </div>
+                    <button onclick="traerInformacionClientes()" class="ui purple button">Consultar Clientes</button>
+                    <button onclick="guardarInformacionClientes()" class="ui pink button">Guardar</button>
+                </div>
+            </div>
+            <div class="column">
+                <h2>Informe de Clientes</h2>
+                <div id="resultado2"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

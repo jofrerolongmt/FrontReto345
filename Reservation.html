@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+
+    <script type="text/javascript" src="js/Reservation.js"></script>
+    <title>Reservaciones</title>
+</head>
+<body>
+    <div class="ui purple inverted fixed menu">
+        <a class="item" href="index.html">
+            <i class="home icon"></i>
+            Inicio
+        </a>
+        <a class="item" href="Category.html">
+            Categorias
+        </a>
+        <a class="item" href="Game.html">
+            Juegos
+        </a>
+        <a class="item" href="Client.html">
+            Clientes
+        </a>
+        <a class="item" href="Message.html">
+            Mensajes
+        </a>
+        <a class="item" href="Reservation.html">
+            Reservaciones
+        </a>
+        <a class="item" href="Reports.html">
+            Reportes
+        </a>
+    </div>
+    <br>
+    <div class="ui divider"></div>
+    <div class="ui two column left aligned divided very relaxed stackable grid container">
+        <div class="row">
+            <div class="column">
+                <h2>Registro de Reservaciones</h2>
+                <div class="ui form">
+                    <div class="field">
+                        <div class="ui search">
+                            <label>Fecha de Inicio : Escoja la fecha de inicio de la Reservacion</label>
+                            <label for="startDate"></label>
+                            <input type="date" value="" id="startDate">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Fecha de Cierre : Escoja la fecha de cierre de la Reservacion</label>
+                        <label for="devolutionDate"></label>
+                        <input type="date" id="devolutionDate">
+                    </div>
+                    <div class="field">
+                        <div class="ui search">
+                            <label for="status"> Estado de la Reserva</label>
+                            <select class="ui dropdown" id="status">
+                                <option value="">Selecione el estado de la reservacion</option>
+                                <option value="completed">Completado</option>
+                                <option value="cancelled">Cancelado</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="client">Cliente</label>
+                        <select class="ui-dropwdown" id="select-client">
+                            <option value="">Seleccione un Cliente</option>
+                        </select>
+                        <script type="text/javascript">
+                            window.onload = autoInicioRelacionCliente();
+                        </script>
+                    </div>
+                    <div class="field">
+                        <label for="game">Juego</label>
+                        <select class="ui-dropwdown" id="select-game">
+                            <option value="">Seleccione un Juego</option>
+                        </select>
+                        <script type="text/javascript">
+                            window.onload = autoTraerGame();
+                        </script>
+                    </div>
+                    <button onclick="listarReservaciones()" class="ui purple button">Consultar Reservaciones</button>
+                    <button onclick="guardarReservacion()" class="ui pink button">Guardar</button>
+                </div>
+            </div>
+            <div class="column">
+                <h2>Informe de Reservaciones</h2>
+                <table class="ui celled table">
+                    <div id="miListaReservacion"></div>    
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

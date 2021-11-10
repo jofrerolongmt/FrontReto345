@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+
+    <script type="text/javascript" src="js/Message.js"></script>
+    <title>Mensajes</title>
+</head>
+<body>
+    <div class="ui purple inverted fixed menu">
+        <a class="item" href="index.html">
+            <i class="home icon"></i>
+            Inicio
+        </a>
+        <a class="item" href="Category.html">
+            Categorias
+        </a>
+        <a class="item" href="Game.html">
+            Juegos
+        </a>
+        <a class="item" href="Client.html">
+            Clientes
+        </a>
+        <a class="item" href="Message.html">
+            Mensajes
+        </a>
+        <a class="item" href="Reservation.html">
+            Reservaciones
+        </a>
+        <a class="item" href="Reports.html">
+            Reportes
+        </a>
+    </div>
+    <br>
+    <div class="ui divider"></div>
+    <div class="ui two column left aligned divided very relaxed stackable grid container">
+        <div class="row">
+            <div class="column">
+                <h2>Registro de Mensajes</h2>
+                <div class="ui form">
+                    <div class="field">
+                            <label for="messagetext">Mensaje</label>
+                            <input type="text" id="messagetext" placeholder="Texto Mensaje">
+                    </div>
+                    <div class="field">
+                        <label for="client">Cliente</label>
+                        <select class="ui-dropwdown" id="select-client">
+                            <option value="">Seleccione un Cliente</option>
+                        </select>
+                        <script type="text/javascript">
+                            window.onload = autoInicioRelacionCliente();
+                        </script>
+                    </div>
+                    <div class="field">
+                        <label for="game">Juego</label>
+                        <select class="ui-dropwdown" id="select-game">
+                            <option value="">Seleccione un Juego</option>
+                        </select>
+                        <script type="text/javascript">
+                            window.onload = autoInicioRelacionGame();
+                        </script>
+                    </div>
+                    <button onclick="autoInicioMensajes()" class="ui purple button">Consultar Mensajes</button>
+                    <button onclick="guardarInformacionMensajes()" class="ui pink button">Guardar</button>
+                </div>
+            </div>
+            <div class="column">
+                <h2>Informe de Mensajes</h2>
+                <div id="resultadoMensajes"></div>
+                <!-- <script type="text/javascript">
+                    window.onload = autoInicioMensajes();
+                </script> -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
